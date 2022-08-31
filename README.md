@@ -1,1 +1,1 @@
-# text-based-personality-analysis-system
+# personality-analysis-system
