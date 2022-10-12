@@ -45,7 +45,7 @@
                 />
               </svg>
             </a>
-            <ul class="p-2">
+            <ul class="p-2 bg-base-100">
               <li><a>MBTI MODE</a></li>
               <li><a>CUSTOM MODE</a></li>
               <li><a>REAL MODE</a></li>
@@ -57,8 +57,7 @@
       </div>
       <a class="btn btn-ghost hidden md:flex">
         <img src="../assets/logo.svg" width="28px" />
-
-        <p class="hidden md:flex lg:hidden text-xs ml-3">
+        <p class="hidden md:flex lg:hidden xl:flex text-xs ml-3">
           PERSONALITY CHARACTER GENERATOR
         </p>
       </a>
@@ -81,7 +80,7 @@
               />
             </svg>
           </a>
-          <ul class="p-2">
+          <ul class="p-2 bg-base-100">
             <li><a>MBTI MODE</a></li>
             <li><a>CUSTOM MODE</a></li>
             <li><a>REAL MODE</a></li>
