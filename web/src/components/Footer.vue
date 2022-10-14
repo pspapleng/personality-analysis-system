@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer p-10 bg-neutral text-neutral-content">
+  <footer class="footer p-10 md:px-16 bg-neutral text-neutral-content">
     <div>
       <img src="../assets/logo.svg" width="40px" />
       <p>
