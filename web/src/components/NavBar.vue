@@ -18,18 +18,11 @@
             />
           </svg>
         </label>
-        <label
-          tabindex="0"
-          class="btn btn-ghost md:hidden"
-          style="padding: 3px"
-        >
-          <img class="p-0" src="../assets/logo.svg" width="70%" />
-        </label>
         <ul
           tabindex="0"
           class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
         >
-          <li><a>HOME</a></li>
+          <li><router-link :to="{ name: 'Home' }">HOME</router-link></li>
           <li tabindex="0">
             <a class="justify-between">
               GENERATE CHARACTER
@@ -55,14 +48,16 @@
           <li><a>ABOUT</a></li>
         </ul>
       </div>
-      <a class="btn btn-ghost hidden md:flex">
-        <img src="../assets/logo.svg" width="28px" />
+      <router-link :to="{ name: 'Home' }" class="btn btn-ghost">
+        <img src="../assets/logo.svg" style="width: 28px" />
         <p class="hidden md:flex lg:hidden xl:flex text-xs ml-3">
           PERSONALITY CHARACTER GENERATOR
         </p>
-      </a>
+      </router-link>
     </div>
-    <div class="navbar-center md:hidden">HOME</div>
+    <div class="navbar-center md:hidden">
+      <p class="text-xs font-semibold uppercase">{{ this.$route.name }}</p>
+    </div>
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal p-0">
         <li tabindex="0">
@@ -91,11 +86,11 @@
       </ul>
     </div>
     <div class="navbar-end">
-      <a class="btn btn-accent">
+      <router-link :to="{ name: '404' }" class="btn btn-accent hidden md:flex">
         <p class="hidden lg:flex mr-2">GENERATE</p>
-        <font-awesome-icon icon="fa-solid fa-wand-magic-sparkles" />
-      </a>
-      <!-- <div class="dropdown dropdown-end">
+        <font-awesome-icon icon="fa-solid fa-wand-magic-sparkles " />
+      </router-link>
+      <div class="dropdown dropdown-end md:hidden">
         <label tabindex="0" class="btn btn-ghost lg:hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -116,32 +111,26 @@
           tabindex="0"
           class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
         >
-          <li><a>HOME</a></li>
-          <li tabindex="0">
-            <a class="justify-between">
-              GENERATE CHARACTER
-              <svg
-                class="fill-current"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"
-                />
-              </svg>
-            </a>
-            <ul class="p-2">
-              <li><a>MBTI MODE</a></li>
-              <li><a>CUSTOM MODE</a></li>
-              <li><a>REAL MODE</a></li>
-            </ul>
-          </li>
+          <li><router-link :to="{ name: 'Home' }">HOME</router-link></li>
+          <li><a>GENERATE CHARACTER</a></li>
           <li><a>PERSONALITY TYPES</a></li>
           <li><a>ABOUT</a></li>
         </ul>
-      </div> -->
+      </div>
     </div>
+    <router-link
+      :to="{ name: '404' }"
+      class="btn btn-lg btn-circle btn-accent float md:hidden drop-shadow"
+    >
+      <font-awesome-icon icon="fa-solid fa-wand-magic-sparkles" />
+    </router-link>
   </div>
 </template>
+
+<style>
+.float {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+}
+</style>
