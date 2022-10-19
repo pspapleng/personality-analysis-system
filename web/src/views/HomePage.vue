@@ -16,13 +16,15 @@
           excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a
           id nisi. Provident cupiditate voluptatem et in.
         </p>
-        <button class="btn btn-accent md:btn-wide rounded-full">
+        <button
+          class="hidden md:inline btn btn-accent md:btn-wide rounded-full"
+        >
           Generate
         </button>
       </div>
     </div>
     <div
-      class="flex flex-col items-center lg:flex-row min-w-full bg-base-100 p-8 md:p-12 space-y-6 lg:space-y-0"
+      class="flex flex-col items-center lg:flex-row min-w-full bg-base-100 p-8 md:pt-4 space-y-6 lg:space-y-0"
     >
       <div class="card w-11/12 lg:w-1/3 bg-slate-50 md:bg-transparent">
         <div class="card-body items-center text-center text-neutral">
