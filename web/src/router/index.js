@@ -8,11 +8,17 @@ const routes = [
       import(/* webpackChunkName: "Home" */ "../views/HomePage.vue"),
   },
   {
+    path: "/menu",
+    name: "Menu",
+    component: () =>
+      import(/* webpackChunkName: "Home" */ "../views/MenuPage.vue"),
+  },
+  {
     path: "/404",
     name: "404",
     component: () =>
       import(/* webpackChunkName: "Home" */ "../views/NotFoundPage.vue"),
-  },
+  }
 ];
 
 const router = createRouter({

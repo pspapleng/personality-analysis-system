@@ -17,6 +17,7 @@ module.exports = {
           success: "#28EA83",
           warning: "#FBBD23",
           error: "#E02727",
+          softpink:"#F9EBF6"
         },
       },
       "dark",
