@@ -1,0 +1,16 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    environment:
+      PORT: 80
+      DATABASE_URL: "postgresql://postgres:password@db:5432/postgres?schema=public"
+  db:
+    image: postgres:14.4
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: password
