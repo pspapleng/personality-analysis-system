@@ -1,0 +1,132 @@
+name: Development CD
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  dockerize_api:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set outputs
+        id: short_sha
+        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      - name: Log in to GitHub Docker Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.PAT }}
+      - name: lowercase repository
+        id: repository
+        uses: ASzc/change-string-case-action@v1
+        with:
+          string: ${{ github.repository }}
+      - name: Build container image
+        uses: docker/build-push-action@v2
+        with:
+          platforms: linux/arm64,linux/amd64
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          pull: true
+          push: true
+          context: ./api
+          file: ./api/Dockerfile
+          target: production
+          build-args: |
+            VERSION=${{ steps.short_sha.outputs.sha_short }}
+          tags: |
+            ghcr.io/${{ steps.repository.outputs.lowercase }}/api:latest
+            ghcr.io/${{ steps.repository.outputs.lowercase }}/api:${{ steps.short_sha.outputs.sha_short }}
+      - name: Set output variables
+        id: set_image_name
+        run: echo ::set-output name=image_name::"ghcr.io/${{ steps.repository.outputs.lowercase }}/api:${{ steps.short_sha.outputs.sha_short }}"
+    outputs:
+      image_name: ${{ steps.set_image_name.outputs.image_name}}
+  # deploy_api:
+  #   runs-on: ubuntu-latest
+  #   needs:
+  #     - dockerize_api
+  #   environment: development
+  #   steps:
+  #     - name: Install SSH Key
+  #       uses: shimataro/ssh-key-action@v2
+  #       with:
+  #         key: ${{ secrets.PRIVATE_KEY }}
+  #         known_hosts: "just-a-placeholder-so-we-dont-get-errors"
+  #     - name: Adding Known Hosts
+  #       run: ssh-keyscan -p 5541 -H bizarre-lab.ddns.net >> ~/.ssh/known_hosts
+  #     - name: Update Service
+  #       run: ssh root@bizarre-lab.ddns.net -p 5541 'docker pull ${{needs.dockerize_api.outputs.image_name}} && docker service update --image ${{needs.dockerize_api.outputs.image_name}} v4_dev_ez_ctl_api'
+  # dockerize_web:
+  #   runs-on: ubuntu-latest
+  #   outputs:
+  #     image_name: ${{ steps.set_image_name.outputs.image_name}}
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - name: Set outputs
+  #       id: short_sha
+  #       run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+  #     - run: |
+  #         npm install
+  #         npm run build
+  #       env:
+  #         VUE_APP_VERSION: ${{ steps.short_sha.outputs.sha_short }}
+  #         APP_BASE_PATH: /ctl/app
+  #       working-directory: ./web
+  #     - run: echo "${{ steps.short_sha.outputs.sha_short }}"
+  #     - name: Set up QEMU
+  #       uses: docker/setup-qemu-action@v1
+  #     - name: Set up Docker Buildx
+  #       uses: docker/setup-buildx-action@v1
+  #     - name: Log in to GitHub Docker Registry
+  #       uses: docker/login-action@v1
+  #       with:
+  #         registry: ghcr.io
+  #         username: ${{ github.actor }}
+  #         password: ${{ secrets.PAT }}
+  #     - name: lowercase repository
+  #       id: repository
+  #       uses: ASzc/change-string-case-action@v1
+  #       with:
+  #         string: ${{ github.repository }}
+  #     - name: Build container image
+  #       uses: docker/build-push-action@v2
+  #       with:
+  #         platforms: linux/arm64,linux/amd64
+  #         cache-from: type=gha
+  #         cache-to: type=gha,mode=max
+  #         pull: true
+  #         push: true
+  #         file: ./web/Dockerfile
+  #         # target: production
+  #         context: ./web
+  #         tags: |
+  #           ghcr.io/${{ steps.repository.outputs.lowercase }}/ui:latest
+  #           ghcr.io/${{ steps.repository.outputs.lowercase }}/ui:${{ steps.short_sha.outputs.sha_short }}
+  #         build-args: |
+  #           APP_VERSION=${{ steps.short_sha.outputs.sha_short }}
+  #     - name: Set output variables
+  #       id: set_image_name
+  #       run: echo ::set-output name=image_name::"ghcr.io/${{ steps.repository.outputs.lowercase }}/ui:${{ steps.short_sha.outputs.sha_short }}"
+  # deploy_web:
+  #   runs-on: ubuntu-latest
+  #   needs:
+  #     - dockerize_web
+  #   environment: development
+  #   steps:
+  #     - name: Install SSH Key
+  #       uses: shimataro/ssh-key-action@v2
+  #       with:
+  #         key: ${{ secrets.PRIVATE_KEY }}
+  #         known_hosts: "just-a-placeholder-so-we-dont-get-errors"
+  #     - name: Adding Known Hosts
+  #       run: ssh-keyscan -p 5541 -H bizarre-lab.ddns.net >> ~/.ssh/known_hosts
+  #     - name: Update Service
+  #       run: ssh root@bizarre-lab.ddns.net -p 5541 'docker pull ${{needs.dockerize_web.outputs.image_name}} && docker service update --image ${{needs.dockerize_web.outputs.image_name}} v4_dev_ez_ctl_ui'
