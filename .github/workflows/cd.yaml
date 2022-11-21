@@ -38,7 +38,6 @@ jobs:
           push: true
           context: ./api
           file: ./api/Dockerfile
-          target: production
           build-args: |
             VERSION=${{ steps.short_sha.outputs.sha_short }}
           tags: |
