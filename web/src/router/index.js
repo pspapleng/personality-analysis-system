@@ -18,6 +18,12 @@ const routes = [
     name: "404",
     component: () =>
       import(/* webpackChunkName: "Home" */ "../views/NotFoundPage.vue"),
+  },
+  {
+    path: "/result",
+    name: "Result",
+    component: () =>
+      import(/* webpackChunkName: "Home" */ "../views/ResultPage.vue"),
   }
 ];
 
