@@ -1,7 +1,8 @@
 <template>
-  <div class="navbar bg-base-100 text-neutral">
+  <div class="navbar bg-base-100 text-neutral px-8">
     <div class="navbar-start">
       <div class="dropdown">
+        <!-- tablet -->
         <label tabindex="0" class="btn btn-ghost hidden md:flex lg:hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -39,15 +40,26 @@
               </svg>
             </a>
             <ul class="p-2 bg-base-100">
-              <li><a>MBTI MODE</a></li>
-              <li><a>CUSTOM MODE</a></li>
-              <li><a>REAL MODE</a></li>
+              <li>
+                <router-link :to="{ name: 'MbtiMode' }">MBTI MODE</router-link>
+              </li>
+              <li>
+                <router-link :to="{ name: 'CustomMode' }">
+                  CUSTOM MODE
+                </router-link>
+              </li>
+              <li>
+                <router-link :to="{ name: 'RealMode' }">REAL MODE</router-link>
+              </li>
             </ul>
           </li>
-          <li><a>PERSONALITY TYPES</a></li>
-          <li><a>ABOUT</a></li>
+          <li>
+            <router-link :to="{ name: 'Type' }">PERSONALITY TYPES</router-link>
+          </li>
+          <li><router-link :to="{ name: 'Home' }">ABOUT </router-link></li>
         </ul>
       </div>
+      <!-- desktop -->
       <router-link :to="{ name: 'Home' }" class="btn btn-ghost">
         <img src="../assets/logo.svg" style="width: 28px" />
         <p class="hidden md:flex lg:hidden xl:flex text-xs ml-3">
@@ -59,7 +71,7 @@
       <p class="text-xs font-semibold uppercase">{{ this.$route.name }}</p>
     </div>
     <div class="navbar-center hidden lg:flex">
-      <ul class="menu menu-horizontal p-0">
+      <ul class="menu menu-horizontal p-0 space-x-2">
         <li tabindex="0">
           <a>
             GENERATE CHARACTER
@@ -76,20 +88,41 @@
             </svg>
           </a>
           <ul class="p-2 bg-base-100">
-            <li><a>MBTI MODE</a></li>
-            <li><a>CUSTOM MODE</a></li>
-            <li><a>REAL MODE</a></li>
+            <router-link :to="{ name: 'MbtiMode' }">
+              <li>
+                <a> MBTI MODE </a>
+              </li>
+            </router-link>
+            <router-link :to="{ name: 'CustomMode' }">
+              <li>
+                <a>CUSTOM MODE</a>
+              </li>
+            </router-link>
+            <router-link :to="{ name: 'RealMode' }">
+              <li>
+                <a>REAL MODE</a>
+              </li>
+            </router-link>
           </ul>
         </li>
-        <li><a>PERSONALITY TYPES</a></li>
-        <li><a>ABOUT</a></li>
+        <router-link :to="{ name: 'Type' }">
+          <li>
+            <a> PERSONALITY TYPES </a>
+          </li>
+        </router-link>
+        <router-link :to="{ name: 'Home' }">
+          <li>
+            <a> ABOUT </a>
+          </li>
+        </router-link>
       </ul>
     </div>
     <div class="navbar-end">
-      <router-link :to="{ name: 'Menu' }" class="btn btn-accent hidden md:flex">
+      <router-link :to="{ name: 'Mode' }" class="btn btn-accent hidden md:flex">
         <p class="hidden lg:flex mr-2">GENERATE</p>
         <font-awesome-icon icon="fa-solid fa-wand-magic-sparkles " />
       </router-link>
+      <!-- mobile -->
       <div class="dropdown dropdown-end md:hidden">
         <label tabindex="0" class="btn btn-ghost lg:hidden">
           <svg
@@ -112,14 +145,20 @@
           class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
         >
           <li><router-link :to="{ name: 'Home' }">HOME</router-link></li>
-          <li><a>GENERATE CHARACTER</a></li>
-          <li><a>PERSONALITY TYPES</a></li>
-          <li><a>ABOUT</a></li>
+          <li>
+            <router-link :to="{ name: 'Mode' }">
+              GENERATE CHARACTER
+            </router-link>
+          </li>
+          <li>
+            <router-link :to="{ name: 'Type' }">PERSONALITY TYPES</router-link>
+          </li>
+          <li><router-link :to="{ name: 'Home' }">ABOUT</router-link></li>
         </ul>
       </div>
     </div>
     <router-link
-      :to="{ name: 'Menu' }"
+      :to="{ name: 'Mode' }"
       class="btn btn-lg btn-circle btn-accent float md:hidden drop-shadow"
     >
       <font-awesome-icon icon="fa-solid fa-wand-magic-sparkles" />
