@@ -2,7 +2,7 @@
   <div>
     <NavBar class="fixed top-0" style="z-index: 1" />
     <router-view />
-    <Footer />
+    <!-- <Footer /> -->
   </div>
 </template>
 <script>
