@@ -15,11 +15,13 @@
           <h2 class="card-title text-primary text-3xl md:text-xl">MBTI MODE</h2>
           <p class="text-sm my-2">สร้าง Character ตาม MBTI ที่คุณเลือก</p>
           <div class="card-actions">
-            <button
-              class="btn xl:btn-wide lg:btn-wide md:px-16 px-14 btn-accent rounded-full"
-            >
-              ENTER
-            </button>
+            <router-link :to="{ name: 'MbtiMode' }">
+              <button
+                class="btn xl:btn-wide lg:btn-wide md:px-16 px-14 btn-accent rounded-full"
+              >
+                ENTER
+              </button>
+            </router-link>
           </div>
         </div>
       </div>
@@ -41,11 +43,13 @@
             สร้าง Character โดย สามารถปรับเปลี่ยนได้ตามใจชอบ
           </p>
           <div class="card-actions">
-            <button
-              class="btn xl:btn-wide lg:btn-wide md:px-16 px-14 btn-accent rounded-full"
-            >
-              ENTER
-            </button>
+            <router-link :to="{ name: 'CustomMode' }">
+              <button
+                class="btn xl:btn-wide lg:btn-wide md:px-16 px-14 btn-accent rounded-full"
+              >
+                ENTER
+              </button>
+            </router-link>
           </div>
         </div>
       </div>
@@ -63,11 +67,13 @@
           <h2 class="card-title text-primary text-3xl md:text-xl">REAL MODE</h2>
           <p class="text-sm my-2">สร้าง Character โดยอ้างอิงจากตัวคุณ</p>
           <div class="card-actions">
-            <button
-              class="btn xl:btn-wide lg:btn-wide md:px-16 px-14 btn-accent rounded-full"
-            >
-              ENTER
-            </button>
+            <router-link :to="{ name: 'RealMode' }">
+              <button
+                class="btn xl:btn-wide lg:btn-wide md:px-16 px-14 btn-accent rounded-full"
+              >
+                ENTER
+              </button>
+            </router-link>
           </div>
         </div>
       </div>
