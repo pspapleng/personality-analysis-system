@@ -1,8 +1,8 @@
 <template>
   <div>
     <NavBar class="fixed top-0" style="z-index: 1" />
-    <router-view class="mt-16 md:mt-20" />
-    <Footer />
+    <router-view />
+    <!-- <Footer /> -->
   </div>
 </template>
 <script>

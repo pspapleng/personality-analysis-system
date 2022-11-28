@@ -9,10 +9,23 @@ import {
   faMagicWandSparkles,
   faPeopleGroup,
   faCode,
+  faQuestion,
+  faMars,
+  faVenus,
+  faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 import { faLightbulb } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-library.add(faMagicWandSparkles, faPeopleGroup, faLightbulb, faCode);
+library.add(
+  faMagicWandSparkles,
+  faPeopleGroup,
+  faLightbulb,
+  faCode,
+  faQuestion,
+  faMars,
+  faVenus,
+  faCheck
+);
 
 const pinia = createPinia();
 createApp(App)

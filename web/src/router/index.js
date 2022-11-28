@@ -8,23 +8,35 @@ const routes = [
       import(/* webpackChunkName: "Home" */ "../views/HomePage.vue"),
   },
   {
-    path: "/menu",
-    name: "Menu",
+    path: "/mode",
+    name: "Mode",
     component: () =>
-      import(/* webpackChunkName: "Home" */ "../views/MenuPage.vue"),
+      import(/* webpackChunkName: "Home" */ "../views/ModePage.vue"),
   },
   {
-    path: "/404",
-    name: "404",
+    path: "/mode/mbti",
+    name: "MbtiMode",
     component: () =>
-      import(/* webpackChunkName: "Home" */ "../views/NotFoundPage.vue"),
+      import(/* webpackChunkName: "Home" */ "../views/MbtiModePage.vue"),
   },
   {
-    path: "/result",
-    name: "Result",
+    path: "/mode/custom",
+    name: "CustomMode",
     component: () =>
-      import(/* webpackChunkName: "Home" */ "../views/ResultPage.vue"),
-  }
+      import(/* webpackChunkName: "Home" */ "../views/CustomModePage.vue"),
+  },
+  {
+    path: "/mode/real",
+    name: "RealMode",
+    component: () =>
+      import(/* webpackChunkName: "Home" */ "../views/RealModePage.vue"),
+  },
+  {
+    path: "/type",
+    name: "Type",
+    component: () =>
+      import(/* webpackChunkName: "Home" */ "../views/PersonalityTypePage.vue"),
+  },
 ];
 
 const router = createRouter({
