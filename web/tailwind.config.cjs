@@ -2,6 +2,15 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
+    // colors: {
+    //   transparent: "transparent",
+    //   white: "#ffffff",
+    //   softpink: "#F9EBF6",
+    //   analysts: "#88619a",
+    //   diplomats: "#2c8b62",
+    //   sentinels: "#4198b4",
+    //   explorers: "#f3d65c",
+    // },
     extend: {},
   },
   fontFamily: {
@@ -20,7 +29,6 @@ module.exports = {
           success: "#28EA83",
           warning: "#FBBD23",
           error: "#E02727",
-          softpink: "#F9EBF6",
         },
       },
       "dark",
