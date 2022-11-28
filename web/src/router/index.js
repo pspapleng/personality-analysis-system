@@ -14,6 +14,12 @@ const routes = [
       import(/* webpackChunkName: "Home" */ "../views/MenuPage.vue"),
   },
   {
+    path: "/form",
+    name: "Form",
+    component: () =>
+      import(/* webpackChunkName: "Home" */ "../views/FormPage.vue"),
+  },
+  {
     path: "/404",
     name: "404",
     component: () =>
@@ -24,7 +30,7 @@ const routes = [
     name: "Result",
     component: () =>
       import(/* webpackChunkName: "Home" */ "../views/ResultPage.vue"),
-  }
+  },
 ];
 
 const router = createRouter({
