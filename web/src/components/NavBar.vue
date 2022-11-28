@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar bg-base-100">
+  <div class="navbar bg-base-100 text-neutral">
     <div class="navbar-start">
       <div class="dropdown">
         <label tabindex="0" class="btn btn-ghost hidden md:flex lg:hidden">
@@ -86,7 +86,7 @@
       </ul>
     </div>
     <div class="navbar-end">
-      <router-link :to="{ name: '404' }" class="btn btn-accent hidden md:flex">
+      <router-link :to="{ name: 'Menu' }" class="btn btn-accent hidden md:flex">
         <p class="hidden lg:flex mr-2">GENERATE</p>
         <font-awesome-icon icon="fa-solid fa-wand-magic-sparkles " />
       </router-link>
@@ -119,7 +119,7 @@
       </div>
     </div>
     <router-link
-      :to="{ name: '404' }"
+      :to="{ name: 'Menu' }"
       class="btn btn-lg btn-circle btn-accent float md:hidden drop-shadow"
     >
       <font-awesome-icon icon="fa-solid fa-wand-magic-sparkles" />
