@@ -13,15 +13,18 @@
             Personality Character Generator
           </h1>
           <p class="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi. Provident cupiditate voluptatem et in.
+            ระบบวิเคราะห์บุคลิกภาพจากข้อความด้วยเทคโนโลยี Machine Learning
+            นำผลบุคลิกภาพที่วิเคราะห์ได้มาสร้างเป็นตัวละครเพื่อเป็นตัวแทนของบุคลิกภาพแต่ละประเภท
+            และสามารถนำผลบุคลิกภาพที่ได้มาต่อยอดได้หลากหลายได้ เช่น
+            นำโมเดลการทำนายมาใช้วิเคราะห์บุคคล
           </p>
-          <button
-            class="hidden md:inline btn btn-accent md:btn-wide rounded-full"
-          >
-            Generate
-          </button>
+          <router-link :to="{ name: 'Mode' }">
+            <button
+              class="hidden md:inline btn btn-accent md:btn-wide rounded-full"
+            >
+              Generate
+            </button>
+          </router-link>
         </div>
       </div>
       <div
@@ -33,11 +36,11 @@
               icon="fa-solid fa-people-group"
               class="text-accent h-10 md:h-12"
             />
-            <h2 class="card-title">Lorem ipsum</h2>
-            <p>
-              Lorem ipsum Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-              occaecat cupidatat non
+            <h2 class="card-title">บุคลิกภาพสำคัญอย่างไร</h2>
+            <p class="px-6">
+              เป็นสิ่งที่ทำให้บุคคลมีเอกลักษณ์โดดเด่นเฉพาะตัว
+              สร้างความรู้สึกที่ดีต่อผู้พบเห็นได้
+              บุคลิกภาพที่ดีช่วยส่งเสริมการเกิดความสำเร็จในด้านต่างๆได้ดีขึ้น
             </p>
           </div>
         </div>
@@ -47,11 +50,10 @@
               icon="fa-regular fa-lightbulb"
               class="text-accent h-10 md:h-12"
             />
-            <h2 class="card-title">Lorem ipsum</h2>
-            <p>
-              Lorem ipsum Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-              occaecat cupidatat non
+            <h2 class="card-title">Character Avatars</h2>
+            <p class="px-6">
+              นำผลบุคลิกภาพที่วิเคราะห์ได้ มาสร้างเป็น Character
+              หลากหลายรูปแบบเพื่อเป็นตัวแทนของบุคลิกภาพแต่ละประเภท
             </p>
           </div>
         </div>
@@ -61,11 +63,11 @@
               icon="fa-solid fa-code"
               class="text-accent h-10 md:h-12"
             />
-            <h2 class="card-title">Lorem ipsum</h2>
-            <p>
-              Lorem ipsum Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-              occaecat cupidatat non
+            <h2 class="card-title">วิเคราะห์บุคลิกภาพของคุณด้วย AI</h2>
+            <p class="px-6">
+              นำเทคโนโลยี Machine Learning
+              มาวิเคราะห์บุคลิกภาพโดยวิเคราะห์จากข้อความที่ผู้ใช้ตอบคำถาม
+              เพื่อทำนายบุคลิกภาพของบุคคลนั้น
             </p>
           </div>
         </div>

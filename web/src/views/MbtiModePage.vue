@@ -403,7 +403,7 @@
                 class="px-8"
               ></p>
             </div>
-            <router-link to="/">
+            <router-link :to="{ name: 'Type' }">
               <button class="btn btn-accent w-32 rounded-full text-md">
                 อ่านเพิ่มเติม
               </button>
@@ -627,13 +627,13 @@ const checkQuiz = (quiz) => {
       quiz.message = "";
       isError.value = true;
       errorMsg.value = "กรุณาตอบคำถามให้ครบ";
-      currentStep.value = 3;
+      return (currentStep.value = 3);
     }
   } else {
     quiz.message = "";
     isError.value = false;
     errorMsg.value = "";
-    currentStep.value = 4;
+    return (currentStep.value = 4);
   }
   // if (
   //   quiz.answer !== "" &&
