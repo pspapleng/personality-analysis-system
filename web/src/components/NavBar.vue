@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar bg-base-100 text-neutral px-8">
+  <div class="navbar bg-base-100 text-neutral px-12 h-20">
     <div class="navbar-start">
       <div class="dropdown">
         <!-- tablet -->

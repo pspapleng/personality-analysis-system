@@ -13,6 +13,7 @@ import {
   faMars,
   faVenus,
   faCheck,
+  faHouse,
 } from "@fortawesome/free-solid-svg-icons";
 import { faLightbulb } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
@@ -24,7 +25,8 @@ library.add(
   faQuestion,
   faMars,
   faVenus,
-  faCheck
+  faCheck,
+  faHouse
 );
 
 const pinia = createPinia();

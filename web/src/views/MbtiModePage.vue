@@ -200,7 +200,7 @@
             />
           </button>
         </div>
-        <div class="space-y-12">
+        <div class="space-y-8">
           <div class="text-xl md:text-2xl font-semibold">
             <div
               v-if="isError"
@@ -225,35 +225,37 @@
             </div>
             โปรดตอบคำถามต่อไปนี้
           </div>
-
-          <div class="flex flex-row justify-center space-x-20 text-xl">
-            <div class="flex flex-col space-y-2">
-              <font-awesome-icon
-                icon="fa-solid fa-mars"
-                class="text-6xl md:text-8xl text-blue-400"
-              />
-              <div>เพศชาย</div>
-              <input
-                type="radio"
-                name="gender"
-                class="radio checked:bg-accent m-auto"
-                v-model="gender"
-                value="male"
-              />
-            </div>
-            <div class="flex flex-col space-y-2">
-              <font-awesome-icon
-                icon="fa-solid fa-venus"
-                class="text-6xl md:text-8xl text-pink-400"
-              />
-              <div>เพศหญิง</div>
-              <input
-                type="radio"
-                name="gender"
-                class="radio checked:bg-accent m-auto"
-                v-model="gender"
-                value="female"
-              />
+          <div class="text-xl px-20 lg:px-24 space-y-4">
+            <div>เพศของคุณ</div>
+            <div class="flex flex-row justify-center space-x-20 text-xl">
+              <div class="flex flex-col space-y-2">
+                <font-awesome-icon
+                  icon="fa-solid fa-mars"
+                  class="text-6xl md:text-8xl text-blue-400"
+                />
+                <div>เพศชาย</div>
+                <input
+                  type="radio"
+                  name="gender"
+                  class="radio checked:bg-accent m-auto"
+                  v-model="gender"
+                  value="male"
+                />
+              </div>
+              <div class="flex flex-col space-y-2">
+                <font-awesome-icon
+                  icon="fa-solid fa-venus"
+                  class="text-6xl md:text-8xl text-pink-400"
+                />
+                <div>เพศหญิง</div>
+                <input
+                  type="radio"
+                  name="gender"
+                  class="radio checked:bg-accent m-auto"
+                  v-model="gender"
+                  value="female"
+                />
+              </div>
             </div>
           </div>
           <div class="text-xl px-20 lg:px-24 space-y-4">
@@ -373,13 +375,11 @@
         class="mbti flex flex-col lg:flex-row lg:col-span-5 p-8 max-w-full text-center"
       >
         <div
-          class="card w-5/12 bg-base-100 m-8 rounded-3xl border-2 border-neutral"
+          class="card w-5/12 bg-base-100 m-8 pb-2 rounded-3xl border-2 border-neutral"
         >
-          <div
-            class="card-body items-center text-center flex justify-center space-y-8"
-          >
-            <div>
-              <h2 class="card-title text-primary text-xl md:text-2xl">
+          <div class="card-body items-center text-center flex justify-between">
+            <div class="space-y-8 pt-40">
+              <h2 class="text-primary text-xl md:text-2xl font-bold">
                 {{
                   mbtiList.filter((item) => {
                     return item.title === mbti;
@@ -392,8 +392,6 @@
                   })[0].name
                 }})
               </h2>
-            </div>
-            <div>
               <p
                 v-html="
                   mbtiList.filter((item) => {
@@ -411,7 +409,7 @@
           </div>
         </div>
         <div
-          class="card w-7/12 bg-base-100 m-8 rounded-3xl border-2 border-neutral"
+          class="card w-7/12 bg-base-100 m-8 pb-2 rounded-3xl border-2 border-neutral"
         >
           <div class="card-body items-center text-center flex justify-between">
             <figure class="px-10 py-4">
@@ -496,7 +494,7 @@
                 alt=""
               />
             </figure>
-            <div>
+            <div class="space-x-4">
               <button class="btn btn-accent rounded-full text-md">
                 <svg
                   class="fill-current w-4 h-4 mr-2"
@@ -505,8 +503,24 @@
                 >
                   <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
                 </svg>
-                <span>Download</span>
+                <span>DOWNLOAD</span>
               </button>
+              <button
+                class="btn btn-accent btn-disabled rounded-full text-md text-gray-600"
+              >
+                <font-awesome-icon
+                  icon="fa-solid fa-wand-magic-sparkles"
+                  class="mr-2"
+                />
+                <span>CUSTOMIZE</span>
+              </button>
+              <router-link :to="{ name: 'Home' }">
+                <button
+                  class="btn btn-accent rounded-full text-md text-gray-600"
+                >
+                  <font-awesome-icon icon="fa-solid fa-house" />
+                </button>
+              </router-link>
             </div>
           </div>
         </div>

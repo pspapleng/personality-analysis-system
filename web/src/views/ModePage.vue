@@ -1,10 +1,12 @@
 <template>
-  <div class="hero min-h-screen">
-    <div class="md:flex justify-center flex-col md:flex-row grid font-prompt">
+  <div class="hero min-h-screen pt-4">
+    <div
+      class="md:flex justify-center flex-col md:flex-row grid w-full h-4/5 px-4 py-2"
+    >
       <div
-        class="card w-80 bg-base-100 m-8 md:py-8 border-2 border-primary bg-gradient-to-b from-pink-100"
+        class="card w-full bg-base-100 m-8 md:py-8 border-2 border-primary bg-gradient-to-b from-pink-100"
       >
-        <figure class="px-10 pt-10">
+        <figure class="px-10 pt-24">
           <img
             src="../assets/MbtiMode.svg"
             alt=""
@@ -13,7 +15,7 @@
         </figure>
         <div class="card-body items-center text-center">
           <h2 class="card-title text-primary text-3xl md:text-xl">MBTI MODE</h2>
-          <p class="text-sm my-2">สร้าง Character ตาม MBTI ที่คุณเลือก</p>
+          <p class="text-md my-2">สร้าง Character ตาม MBTI ที่คุณเลือก</p>
           <div class="card-actions">
             <router-link :to="{ name: 'MbtiMode' }">
               <button
@@ -26,9 +28,9 @@
         </div>
       </div>
       <div
-        class="card w-80 bg-base-100 m-8 md:py-8 border-2 border-primary bg-gradient-to-b from-pink-100"
+        class="card w-full bg-base-100 m-8 md:py-8 border-2 border-primary bg-gradient-to-b from-pink-100"
       >
-        <figure class="px-10 pt-10">
+        <figure class="px-10 pt-24">
           <img
             src="../assets/CustumeMode.svg"
             alt=""
@@ -39,24 +41,25 @@
           <h2 class="card-title text-primary text-3xl md:text-xl">
             CUSTOM MODE
           </h2>
-          <p class="text-sm my-2">
-            สร้าง Character โดย สามารถปรับเปลี่ยนได้ตามใจชอบ
+          <p class="text-md my-2">
+            สร้าง Character <br />
+            โดยสามารถปรับเปลี่ยนได้ตามใจชอบ
           </p>
           <div class="card-actions">
             <router-link :to="{ name: 'CustomMode' }">
               <button
-                class="btn xl:btn-wide lg:btn-wide md:px-16 px-14 btn-accent rounded-full"
+                class="btn btn-disabled xl:btn-wide lg:btn-wide md:px-16 px-14 btn-accent rounded-full text-gray-600"
               >
-                ENTER
+                COMING SOON
               </button>
             </router-link>
           </div>
         </div>
       </div>
       <div
-        class="card w-80 bg-base-100 m-8 md:py-8 border-2 border-primary bg-gradient-to-b from-pink-100"
+        class="card w-full bg-base-100 m-8 md:py-8 border-2 border-primary bg-gradient-to-b from-pink-100"
       >
-        <figure class="px-10 pt-10">
+        <figure class="px-10 pt-24">
           <img
             src="../assets/RealMode.svg"
             alt=""
@@ -65,13 +68,16 @@
         </figure>
         <div class="card-body items-center text-center">
           <h2 class="card-title text-primary text-3xl md:text-xl">REAL MODE</h2>
-          <p class="text-sm my-2">สร้าง Character โดยอ้างอิงจากตัวคุณ</p>
+          <p class="text-md my-2">
+            สร้าง Character <br />
+            โดยอ้างอิงจากตัวคุณ
+          </p>
           <div class="card-actions">
             <router-link :to="{ name: 'RealMode' }">
               <button
-                class="btn xl:btn-wide lg:btn-wide md:px-16 px-14 btn-accent rounded-full"
+                class="btn btn-disabled xl:btn-wide lg:btn-wide md:px-16 px-14 btn-accent rounded-full text-gray-600"
               >
-                ENTER
+                COMING SOON
               </button>
             </router-link>
           </div>
