@@ -5,7 +5,7 @@
         class="flex flex-col items-center lg:flex-row-reverse md:mx-12 md:my-4 p-6 md:p-8 md:bg-info rounded-3xl"
       >
         <img
-          src="../assets/Girl dancing.svg"
+          src="../assets/Girl_dancing.svg"
           class="max-w-xs md:max-w-md justify-self-center"
         />
         <div class="p-4 text-center lg:text-left text-neutral">
