@@ -703,7 +703,7 @@ const checkQuiz = (quiz) => {
 const nextToStepFour = () => {
   quizzess.some(checkQuiz);
   console.log(toRaw(quizzess));
-  //   saveCharacterForm(mbti.value, age.value, gender.value, quizzess);
+  saveCharacterForm(mbti.value, age.value, gender.value, quizzess);
 };
 
 // saveCharacterForm("INFP",12,"male",["ans 1","ans 2"])
