@@ -14,3 +14,8 @@ services:
       - 5432:5432
     environment:
       POSTGRES_PASSWORD: password
+    volumes:
+      - pgData:/var/lib/postgresql/data
+
+volumes:
+  pgData:
